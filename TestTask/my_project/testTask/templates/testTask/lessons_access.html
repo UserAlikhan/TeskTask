@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- <title>Доступные ролики</title> -->
+        <link rel="stylesheet", type="text/css", href="{% static 'testTask/styleLessons.css' %}">
+
+        <style>
+            table {
+                border-collapse: collapse;
+                width: 100%;
+                margin-top: 20px;
+            }
+        
+            th, td {
+                padding: 8px; /* Измените это значение по вашему желанию */
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+            }
+    
+            /* Стили для центрирования надписи */
+            .centered_text {
+                text-align: center;
+                margin-bottom: 20px auto;
+                color: #FC3900;
+                font-size: 35px;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+
+    <h1 class="centered_text">Доступные уроки пользователя {{ person_name }}</h1>
+
+    {% if lessons %}
+        <table class="text">
+            <thead>
+                <tr>
+                    <th>Урок</th>
+                    <th>Дата просмотра</th>
+                    <th>Время просмотра</th>
+                    <th>Статус</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for lesson in lessons %}
+                    <tr>
+                        <td>{{ lesson.Lesson_Name }}</td>
+                        <td>{{ lesson.Last_Viewed_Date }}</td>
+                        <td>{{ lesson.Watched_Time }}</td>
+                        <td>{{ lesson.Status }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>Нет доступных роликов.</p>
+    {% endif %}
+
+    </body>
+</html>

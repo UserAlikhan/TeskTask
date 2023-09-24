@@ -1,0 +1,60 @@
+{% load static %}
+{% load blog_tags %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <title>Список уроков</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'testTask/styleProduct.css' %}">
+
+        <style>
+            table {
+                border-collapse: collapse;
+                width: 80%;
+                margin: 30px auto;
+            }
+
+            th, td {
+                padding: 8px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+            }
+
+            .centered_text {
+                text-align: center;
+                color: white;
+                font-size: 35px;
+                font-weight: bold;
+                margin-top: 40px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="centered_text">Список уроков для {{ person_name }}</h1>
+        <table class="text">
+            <thead>
+                <tr>
+                    <th>Продукт</th>
+                    <th>Название Урока</th>
+                    <th>Имя пользователя</th>
+                    <th>Время просмотра</th>
+                    <th>Статус</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for lesson in lessons %}
+                    <tr>
+                        <td>
+                            <li>
+                                <a class="a_color" href="{{ product_list|index:forloop.counter0}}">{{ lesson.Product }}</a>
+                            </li>
+                        </td>
+                        <td>{{ lesson.Lesson_Name }}</td>
+                        <td>{{ lesson.Person_Name }}</td>
+                        <td>{{ lesson.Watched_time }}</td>
+                        <td>{{ lesson.Status }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+</html>

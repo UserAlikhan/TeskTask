@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en", dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Responsive NavBar</title>
+        <meta name="viewport", content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet", type="text/css", href="{% static 'testTask/style.css' %}">
+    </head>
+
+    <body>
+
+        <nav>
+            <label class="logo">Test Task</label>
+
+            <ul>
+                <li><a href="/page1/status/">Status</a></li>
+            </ul>
+        </nav>
+
+        <div class="wrapper">
+            <div class="sidebar">
+                {% if all_users %}
+                    <ul>
+                        {% for user in all_users %}
+                            <li><a href="/page1/{{ user.name }}">{{ user.name }}</a></li>
+    <!--                    <li><a href="#">Status</a></li>-->
+    <!--                    <li><a href="#">Products</a></li>-->
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <h3>You don`t have any users</h3>
+                {% endif %}
+            </div>
+            <div class="main_content">
+                <div class="header">Welcome!!</div>
+                <div class="info">
+
+                </div>
+            </div>
+
+        </div>
+    </body>
+
+</html>

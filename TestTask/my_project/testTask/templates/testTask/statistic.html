@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport", content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet", type="text/css", href="{% static 'testTask/styleStatistic.css' %}">
+
+    </head>
+    <body>
+        {% for product_statistic in product_statistics %}
+            <div class="product-stats">
+                <div class="product-name">
+                    <h1>{{ product_statistic.product_name }}</h1>
+                </div>
+                <div class="stat">
+                    <p>Total Lessons Viewed: {{ product_statistic.total_lessons_viewed }}</p>
+                </div>
+                <div class="stat">
+                    <p>Total Time Watched: {{ product_statistic.total_time_watched }}</p>
+                </div>
+                <div class="stat">
+                    <p>Total Students: {{ product_statistic.total_students }}</p>
+                </div>
+                <div class="stat">
+                    <p>Purchase Percentage: {{ product_statistic.purchase_percentage }}%</p>
+                </div>
+            </div>
+        {% endfor %}
+
+    </body>
+</html>

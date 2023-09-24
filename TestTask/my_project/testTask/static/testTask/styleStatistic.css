@@ -1,0 +1,21 @@
+body{
+    min-height: 100vh;
+    background: url('pictures/City.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.product-stats {
+    color: white;
+    text-align: center;
+}
+
+.product-name {
+    font-size: 30px; /* Наибольший размер шрифта */
+    margin-bottom: 10px; /* Пространство между product_name и остальными полями */
+}
+
+.stat {
+    font-size: 24px; /* Размер шрифта для остальных полей */
+    margin-bottom: 5px; /* Пространство между полями */
+}

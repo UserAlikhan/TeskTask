@@ -1,0 +1,21 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    background: url('pictures/City.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+table.text{
+    color: #FC3900;
+    font-size: 25px;
+    /* line-heighst: 80px;
+    padding: 0 100px; */
+    font-weight: bold;
+}

@@ -1,0 +1,16 @@
+body{
+    min-height: 100vh;
+    background: url('pictures/bck.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+table.text{
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+a.a_color{
+    color: #927DE4;
+}
